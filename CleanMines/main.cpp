@@ -9,6 +9,6 @@ extern const int WIN_HEIGHT=600;
 int main(void)
 {
 	GUI gui;
-
+	gui.show();
 	return Fl::run();
 }

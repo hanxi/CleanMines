@@ -1,6 +1,6 @@
 #include "test.h"
 #include <iostream>
-#include "globalVal.h"
+#include "../globalVal.h"
 
 using namespace std;
 

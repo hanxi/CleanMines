@@ -60,7 +60,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="fltk.lib"
+				AdditionalDependencies="fltk.lib fltk_forms.lib fltk_gl.lib fltk_images.lib fltk_jpeg.lib fltk_png.lib fltk_zlib.lib"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="1"
@@ -134,7 +134,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="fltk.lib"
+				AdditionalDependencies="fltk.lib fltk_forms.lib fltk_gl.lib fltk_images.lib fltk_jpeg.lib fltk_png.lib fltk_zlib.lib"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="2"
