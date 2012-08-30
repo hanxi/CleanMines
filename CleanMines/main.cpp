@@ -10,10 +10,14 @@ int main(void)
 {
 	GUI gui;
 	//测试拷贝构造函数
-	GameObject t1;
+/*	GameObject t1;
 	t1.setImage("res/images/bg.jpg");
 	GameObject t2(t1);
 	Test::test_copy_construdtor(t1,t2);
+	ImageBox imageBox("res/images/bg.jpg");
+	Test::test_ImageBox(imageBox);
+	*/
+
 	gui.show();
 	return Fl::run();
 }

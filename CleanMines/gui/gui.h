@@ -4,6 +4,7 @@
 #include <vector>
 #include <cassert>
 #include <memory>
+#include <iostream>
 #include "FLTK.h"
 #include "globalVal.h"
 #include "GameObject.h"
@@ -29,8 +30,7 @@ protected:
 
 private:
 	auto_ptr<Fl_Window> m_pWindow;//主窗体
-	auto_ptr<GameObject> m_pBackground;//背景
-	std::vector<std::vector<GameObject> > m_grid;//网格
+	std::vector<std::vector<GridBlock> > m_grid;//网格
 	int m_numberLines;//行数
 	int m_numberColumns;//列数
 	float m_width;
@@ -53,22 +53,22 @@ inline void GUI::show(void)
 }
 inline void GUI::createGameObjects(void)
 {
-	m_pBackground.reset(new GameObject("res/images/bg.jpg"));
-	m_pBackground->setSize(m_width,m_height);
-	m_grid.resize(m_numberColumns*m_numberLines);
-	std::vector<GameObject> grids;
+	m_grid.clear();
+	std::vector<GridBlock> grids;
 	for (int i=0; i<m_numberLines; i++)
 	{
 		grids.clear();
 		for (int j=0; j<m_numberColumns; j++)
 		{
-			GameObject gridBlock("res/images/grid.jpg");
+			GridBlock gridBlock("res/images/grid.jpg");
 			gridBlock.setPosition(i*initBlockWidth,j*initBlockHeight);
 			gridBlock.setSize(initBlockWidth,initBlockHeight);
 			grids.push_back(gridBlock);
 		}
 		m_grid.push_back(grids);
 	}
+	m_grid[0][0].setImage("res/images/grid.jpg");
+	m_grid[0][0].setSize(initBlockWidth,initBlockHeight);
 }
 
 #endif
